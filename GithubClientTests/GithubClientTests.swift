@@ -18,12 +18,15 @@ final class MockSearchRepositoryService: SearchRepositoryServiceType {
 final class GithubClientTests: XCTestCase {
 
     func testViewModel() {
+        let expectation = expectation(description: "request")
         let viewModel = ListViewModel(searchService: MockSearchRepositoryService())
         _ = viewModel.$repositories.sink { viewModels in
             XCTAssertEqual(viewModels.count, 1)
+            expectation.fulfill()
         }
         
         viewModel.searchRepositories(with: "q")
+        wait(for: [expectation])
     }
 
 }
