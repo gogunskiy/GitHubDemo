@@ -1,0 +1,13 @@
+What is missing:
+
+1. Error handling
+2. Tests (added one just for an example)
+3. Loader on the details screen
+
+
+What can be imporoved:
+1. NetworkAgent is doing too much, need to move parsing on one level above
+2. No logic to clear a list when we remove the search string
+3. Loader is missing while we searching
+4. Throtling time can be changed (it is just a constant, set it to 1 just for demonstration purposes)
+5. There are some Force unwraps for URL. No time to fix :).
