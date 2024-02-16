@@ -42,14 +42,7 @@ class NetworkAgent: NetworkAgentProtocol {
         request.httpMethod = "GET"
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
-        request.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
-        
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            let string = String(data: data!, encoding: .utf8)
-//            print(string)
-//        }
-  //      task.resume()
-        
+        request.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map(\.data)

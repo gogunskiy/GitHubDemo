@@ -25,7 +25,7 @@ struct ListView: View {
                                      case .success(let image):
                                          image.resizable()
                                               .aspectRatio(contentMode: .fit)
-                                              .frame(maxWidth: 300, maxHeight: 100)
+                                              .frame(maxWidth: 100, maxHeight: 100)
                                      case .failure:
                                          Image(systemName: "default_image")
                                      @unknown default:
