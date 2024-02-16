@@ -20,6 +20,8 @@ final class GithubClientTests: XCTestCase {
 
     func testViewModel() {
         let expectation = expectation(description: "request")
+        viewModel.searchRepositories(with: "q")
+
         _ = viewModel.$repositories.sink { viewModels in
             if !viewModels.isEmpty {
                 XCTAssertEqual(viewModels.count, 1)
@@ -27,7 +29,6 @@ final class GithubClientTests: XCTestCase {
             }
         }
         
-        viewModel.searchRepositories(with: "q")
         wait(for: [expectation])
     }
 
