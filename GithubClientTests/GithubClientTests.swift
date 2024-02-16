@@ -31,5 +31,4 @@ final class GithubClientTests: XCTestCase {
         
         wait(for: [expectation])
     }
-
 }
